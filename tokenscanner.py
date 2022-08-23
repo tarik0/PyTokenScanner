@@ -123,7 +123,7 @@ def main():
     accounts, node_thread, node_process = start_node()
 
     # Create new forked provider.
-    provider = Web3.HTTPProvider("http://127.0.0.1:8545/")
+    provider = Web3.HTTPProvider(f"http://127.0.0.1:{environ['DEBUG_HH_PORT']}/")
     forked_w3 = Web3(provider)
     if not forked_w3.isConnected():
         print("┣ Unable to connect to the forked network!")

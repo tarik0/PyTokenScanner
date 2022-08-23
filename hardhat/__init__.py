@@ -40,7 +40,7 @@ def set_hardhat_config(block_number):
 def start_node():
     """ Start the hardhat node. """
     # Start the process.
-    process = Popen(["npx", "hardhat", "node"], cwd="./hardhat/", stdout=PIPE)
+    process = Popen(["npx", "hardhat", "node", "--port", str(environ["DEBUG_HH_PORT"])], cwd="./hardhat/", stdout=PIPE)
 
     # The auto generated account keys.
     account_keys = []
